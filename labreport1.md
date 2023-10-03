@@ -5,7 +5,7 @@
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
-Nothing happened because no directory was given to change into. No error was given either, however
+Nothing happened because we were already in the home directory. cd without arguments moves you into the home directory.
 
 ## directory argument
 
