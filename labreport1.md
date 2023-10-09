@@ -5,8 +5,8 @@
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
-Starting Directory: "~"
-Ending Directory: "~"
+Starting Directory: "\~"
+Ending Directory: "\~"
 
 Nothing happened because we were already in the home directory. cd without arguments moves you into the home directory.
 
@@ -16,8 +16,8 @@ Nothing happened because we were already in the home directory. cd without argum
 [user@sahara ~]$ cd lecture1/
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~"
+Ending Directory: "\~/lecture1"
 
 It changed directory into the given directory. No error as it worked as intended.
 
@@ -28,8 +28,8 @@ It changed directory into the given directory. No error as it worked as intended
 bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 It gave an error because cd expects directory arguments and a file was given.
 
@@ -41,8 +41,8 @@ It gave an error because cd expects directory arguments and a file was given.
 Hello.class  Hello.java  messages  README
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 It listed all of the files and directories in the current working directory, as intended 
 
@@ -53,8 +53,8 @@ It listed all of the files and directories in the current working directory, as 
 en-us.txt  es-mx.txt  in-hi.txt  zh-cn.txt
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 It listed all of the files and directories in the directory given as an argument.
 
@@ -65,8 +65,8 @@ It listed all of the files and directories in the directory given as an argument
 Hello.java
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 Strangely enough, it just printed the name of the file given without error. My guess is that ls will print all of the files and directories given to it, or just print everything in the current working diretory if no arguments are given.
 
@@ -78,8 +78,8 @@ Strangely enough, it just printed the name of the file given without error. My g
 ^C
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 Running cat without any argument got stuck in an infinite loop (which I had to escape with Ctrl+C). This is an error because cat will print files given, and it cannot have a 'default' so an argument needs to be given.
 
@@ -90,8 +90,8 @@ Running cat without any argument got stuck in an infinite loop (which I had to e
 cat: messages/: Is a directory
 [user@sahara ~/lecture1]$ 
 ```
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 It gave an error as, once again, cat prints the contents of a file and it was not expecting to be given a directory.
 
@@ -112,7 +112,7 @@ public class Hello {
 }[user@sahara ~/lecture1]$ 
 ```
 
-Starting Directory: "~/lecture1"
-Ending Directory: "~/lecture1"
+Starting Directory: "\~/lecture1"
+Ending Directory: "\~/lecture1"
 
 Finally, with the proper argument of a file, cat works as intended. An interesting note is that there was no empty line at the end of `Hello.java` so after printing the final `}`, it just printed `[user@sahara ~/lecture1]$ ` immediately after with no new-line.
