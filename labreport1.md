@@ -75,13 +75,19 @@ Strangely enough, it just printed the name of the file given without error. My g
 
 ```
 [user@sahara ~/lecture1]$ cat
+Hello.java
+Hello.java
+woah why is it repeating my words
+woah why is it repeating my words
+copy cat >:(  
+copy cat >:(
 ^C
-[user@sahara ~/lecture1]$ 
+[user@sahara ~/lecture1]$ ^C
 ```
 Starting Directory: "\~/lecture1"
 Ending Directory: "\~/lecture1"
 
-Running cat without any argument got stuck in an infinite loop (which I had to escape with Ctrl+C). This is an error because cat will print files given, and it cannot have a 'default' so an argument needs to be given.
+Running cat without any argument did seemingly nothing. However upon typing any input it repeated that exact same input as output.
 
 ## directory argument
 
