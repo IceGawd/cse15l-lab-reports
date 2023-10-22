@@ -45,3 +45,8 @@ class StringServer {
 ## Screenshots
 ![Image](add1.png)
 ![Image](add2.png)
+
+# Part 2
+![Image](l2p2s1.png)
+![Image](l2p2s2.png)
+![Image](passwordlessssh.png)
