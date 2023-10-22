@@ -55,4 +55,4 @@ class StringServer {
 ![Image](passwordlessssh.png)
 
 # Part 3
-This key stuff is so cool. I knew about SSH before this class and I knew the general concept of public and private keys, I never that SSH would not ask for a password if there is a public-private key pair shared between the remote and local servers.
+This key stuff is so cool. I knew about SSH before this class and I knew the general concept of public and private keys, I never that SSH would not ask for a password if there is a public-private key pair shared between the remote and local servers. I also never knew how to make a server in Java, and I thought it was so cool! I do know that it has been a little simplified because the ``URLHandler`` interface is not native to Java and was implemented in the ``Server.java`` and if I were to do it entirely by myself I would have to learn how ``Server.java`` works, but besides that it is so simple! It does make me wonder more about how does networking works as I know many websites use HTML so having one in Java confuses me on how all of this works.
