@@ -47,6 +47,12 @@ class StringServer {
 ![Image](add2.png)
 
 # Part 2
+## Local private key path
 ![Image](l2p2s1.png)
+## Remote public key path
 ![Image](l2p2s2.png)
+## Password-less SSH
 ![Image](passwordlessssh.png)
+
+# Part 3
+This key stuff is so cool. I knew about SSH before this class and I knew the general concept of public and private keys, I never that SSH would not ask for a password if there is a public-private key pair shared between the remote and local servers.
