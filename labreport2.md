@@ -44,8 +44,11 @@ class StringServer {
 ```
 ## Screenshots
 ![Image](add1.png)
+
 *Using ``localhost:4000/add-message?s=Hello`` adds ``Hello`` to the String array*
+
 ![Image](add2.png)
+
 *Using ``localhost:4000/add-message?s=How are you`` adds ``How are you`` to the String array and it shows that Hello is still saved*
 
 # Part 2
