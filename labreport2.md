@@ -44,13 +44,15 @@ class StringServer {
 ```
 ## Screenshots
 ![Image](add1.png)
+*Using ``localhost:4000/add-message?s=Hello`` adds ``Hello`` to the String array*
 ![Image](add2.png)
+*Using ``localhost:4000/add-message?s=How are you`` adds ``How are you`` to the String array and it shows that Hello is still saved*
 
 # Part 2
 ## Local private key path
-![Image](l2p2s1.png)
+![Image](lalalala.png)
 ## Remote public key path
-![Image](l2p2s2.png)
+![Image](authkeys.png)
 ## Password-less SSH
 ![Image](passwordlessssh.png)
 
