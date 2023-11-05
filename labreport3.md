@@ -1,5 +1,5 @@
 # Part 1 - Bugs
-## A failure-inducing input for the buggy program, as a JUnit test and any associated code
+## A failure-inducing input for the buggy program
 ```
 	@Test
 	public void testReversed2() {
@@ -7,7 +7,7 @@
 		assertArrayEquals(new int[]{3, 2, 1}, ArrayExamples.reversed(input1));
 	}
 ```
-## An input that doesn’t induce a failure, as a JUnit test and any associated code
+## An input that doesn’t induce a failure
 ```
 	@Test
 	public void testReversed() {
@@ -15,11 +15,11 @@
 		assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
 	}
 ```
-## The symptom, as the output of running the tests
+## The symptom
 
 ![Image](trat.png)
 
-## The bug, as the before-and-after code change required to fix it
+## The bug
 ### Before
 ```
 	static int[] reversed(int[] arr) {
@@ -40,3 +40,7 @@
 		return newArray;
 	}
 ```
+
+The symptom shows that the array for some reason sets the first element to 0, which is an element that is not in the given array. The error is that the original code edits ``arr`` with the values of ``newArray`` instead of the reverse, and it also returns ``arr`` which is incorrect as its supposed to return a new array. This explains the first element being 0 as a new integer arrays are filled with all zeros.
+
+# Part 2 - Researching Commands (grep)
