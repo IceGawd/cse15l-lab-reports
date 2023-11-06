@@ -80,7 +80,7 @@ The symptom shows that the array for some reason sets the first element to 0, wh
 
 
 ```
-The -v flag will inverse the search. If a line does not contain the given string, then it will print the line. The second example shows that if the given string is not in any of the lines, it will just print all of the lines. This is great as it can help cut down on useless info in a file to search for the actually useful information.
+The -v flag will inverse the search. If a line does not contain the given string, then it will print the line. The second example shows that if the given string is not in any of the lines, it will just print all of the lines. This is great as it can help reduce useless info in a file to search for useful information.
 
 ## grep -i
 ### Example 1
@@ -90,17 +90,17 @@ The -v flag will inverse the search. If a line does not contain the given string
         PLoS Medicine by Deborah Hayden, entitled “Alas, Poor Yorick: Digging Up
         by her comment on our article. Nowhere in that article, “Ethics. Constructing Ethical
         Guidelines for Biohistory” [2], do we suggest that genetic testing be done on deceased
-        individuals for historically significant questions? In fact, we specifically highlight some
+        individuals for historically significant questions? We specifically highlight some
         of the ethical, legal, social, and scientific issues that such testing raises and recommend
-        that guidelines be developed in order to monitor current research that is being undertaken
+        that guidelines be developed to monitor current research that is being undertaken
         in this area. The article does not advocate biohistorical research. This distinction is
-        very important and one that is quite evident upon a careful reading of our article.
+        crucial and one that is quite evident upon a careful reading of our article.
 ```
 ### Example 2
 ```
 λ grep -i "IN" pmed.0020048.txt
         Current journal requirements forcing clinical trials to be registered [1] are
-        insufficient and are unlikely to solve the problem of negative trials never even making it
+        insufficient and are unlikely to solve the problem of negative trials never making it
         to a journal. Most of the patients consenting to clinical trials do so out of altruism. It
         is a great betrayal of their trust to suppress clinical trial data. I suggest that
         institutional review boards refuse to allow human experimentation unless the protocol is
@@ -113,4 +113,33 @@ The -v flag will inverse the search. If a line does not contain the given string
         sticking to higher standards of ethics will raise societal respect for the industry
         (currently being battered for greed) attract a more talented workforce, and may even
 ```
-The -i flag will check without caring about the case. Either way, if given lowercase (like Example 1) or uppercase (like Example 2), 
+The -i flag will check without caring about the case. Either way, if given lowercase (like Example 1) or uppercase (like Example 2), grep will look for the given string without any care of the case. Every basic search and replace in a text editor has the ignore case option, so it is unsurprising that grep has one as well.
+
+## grep -c
+### Example 1
+```
+λ grep -c "ing" pmed.0020157.txt
+5
+```
+### Example 2
+```
+λ grep -cv "ing" pmed.0020120.txt
+23
+```
+The -c flag will count the lines with the given string. I use it in combination with the -v flag in Example 2 as it was mentioned on the man page. This is just a shorthand as I feel like with some combination of ``grep`` and ``wc`` the same thing can be done.
+
+## grep -r
+### Example 1
+```
+λ grep -r "doctoral" ./biomed/
+./biomed/1471-2156-4-10.txt:        Cynthia Coffman is the post-doctoral associate who
+./biomed/1471-2334-3-15.txt:        The work is a portion of MA's doctoral thesis. MA
+./biomed/1472-6793-2-19.txt:        author DER (doctoral candidate) and contributed to the
+```
+### Example 2
+```
+λ grep -r "government/" ./government/
+./government/Gen_Account_Office/im814.txt:Participate in government/contractor
+./government/Gen_Account_Office/July11-2001_gg00172r.txt:On May 24, 2000, FFC sponsored a government/industry forum on
+```
+The -r flag is arguably the most important flag for grep. Searching entire filesystems for keywords is **SO** important. An example not in the technical directory is if you know you once wrote code using a certain library (like for example the <libatomic> or <mutex> directories for C/C++) but don't remember in what project or in what file, just simply ``grep`` your entire code folder and save an hour-long headache into a minute-long solution.
