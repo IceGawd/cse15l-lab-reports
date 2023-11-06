@@ -140,6 +140,6 @@ The -c flag will count the lines with the given string. I use it in combination 
 ```
 λ grep -r "government/" ./government/
 ./government/Gen_Account_Office/im814.txt:Participate in government/contractor
-./government/Gen_Account_Office/July11-2001_gg00172r.txt:On May 24, 2000, FFC sponsored a government/industry forum on
+./government/Gen_Account_Office/July11-2001_gg00172r.txt: On May 24, 2000, FFC sponsored a government/industry forum on
 ```
-The -r flag is arguably the most important flag for grep. Searching entire filesystems for keywords is **SO** important. An example not in the technical directory is if you know you once wrote code using a certain library (like for example the <libatomic> or <mutex> directories for C/C++) but don't remember in what project or in what file, just simply ``grep`` your entire code folder and save an hour-long headache into a minute-long solution.
+The -r flag is arguably the most important flag for grep. What -r does is it recursively searches the given directory and looks in each file for the given string. Searching entire filesystems for keywords is **SO** important. An example not in the technical directory is if you know you once wrote code using a certain library (like for example the <libatomic> or <mutex> directories for C/C++) but don't remember in what project or in what file, just simply ``grep`` your entire code folder and save an hour-long headache into a minute-long solution.
