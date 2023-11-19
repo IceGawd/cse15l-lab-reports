@@ -45,6 +45,7 @@ The symptom shows that the array for some reason sets the first element to 0, wh
 
 # Part 2 - Researching Commands (grep)
 **All command-line options listed here were found on the [man page](https://man7.org/linux/man-pages/man1/grep.1.html), here is a link**
+**All commands were run in the technical directory**
 
 ## grep -v
 ### Example 1
@@ -60,6 +61,8 @@ The symptom shows that the array for some reason sets the first element to 0, wh
 
 
 ```
+### Explanation 1
+The -v flag will inverse the search. If a line does not contain the given string, then it will print the line. 
 ### Example 2
 ```
 λ grep -v "avighna" pmed.0020191.txt
@@ -80,12 +83,13 @@ The symptom shows that the array for some reason sets the first element to 0, wh
 
 
 ```
-The -v flag will inverse the search. If a line does not contain the given string, then it will print the line. The second example shows that if the given string is not in any of the lines, it will just print all of the lines. This is great as it can help reduce useless info in a file to search for useful information.
+### Explanation 2
+This shows that if the given string is not in any of the lines, it will just print all of the lines. This is great as it can help reduce useless info in a file to search for useful information.
 
 ## grep -i
 ### Example 1
 ```
-λ grep -i "in" pmed.0020192.txt
+λ grep -i "in" ./plos/pmed.0020192.txt
         I am writing in response to an essay published in the most recent issue of
         PLoS Medicine by Deborah Hayden, entitled “Alas, Poor Yorick: Digging Up
         by her comment on our article. Nowhere in that article, “Ethics. Constructing Ethical
@@ -96,9 +100,11 @@ The -v flag will inverse the search. If a line does not contain the given string
         in this area. The article does not advocate biohistorical research. This distinction is
         crucial and one that is quite evident upon a careful reading of our article.
 ```
+### Explanation 1
+The -i flag will check without caring about the case. Here we give it lowercase input.
 ### Example 2
 ```
-λ grep -i "IN" pmed.0020048.txt
+λ grep -i "IN" ./plos/pmed.0020048.txt
         Current journal requirements forcing clinical trials to be registered [1] are
         insufficient and are unlikely to solve the problem of negative trials never making it
         to a journal. Most of the patients consenting to clinical trials do so out of altruism. It
@@ -113,20 +119,24 @@ The -v flag will inverse the search. If a line does not contain the given string
         sticking to higher standards of ethics will raise societal respect for the industry
         (currently being battered for greed) attract a more talented workforce, and may even
 ```
-The -i flag will check without caring about the case. Either way, if given lowercase (like Example 1) or uppercase (like Example 2), grep will look for the given string without any care of the case. Every basic search and replace in a text editor has the ignore case option, so it is unsurprising that grep has one as well.
+### Explanation 2
+Here we give it uppercase, and either way, grep will look for the given string without any care of the case. Every basic search and replace in a text editor has the ignore case option, so it is unsurprising that grep has one as well.
 
 ## grep -c
 ### Example 1
 ```
-λ grep -c "ing" pmed.0020157.txt
+λ grep -c "ing" ./plos/pmed.0020157.txt
 5
 ```
+### Explanation 1
+The -c flag will count the lines with the given string.
 ### Example 2
 ```
-λ grep -cv "ing" pmed.0020120.txt
+λ grep -cv "ing" ./plos/pmed.0020120.txt
 23
 ```
-The -c flag will count the lines with the given string. I use it in combination with the -v flag in Example 2 as it was mentioned on the man page. This is just a shorthand as I feel like with some combination of ``grep`` and ``wc`` the same thing can be done.
+### Explanation 2
+I use it in combination with the -v flag as it was mentioned on the man page. This is just a shorthand as I feel like with some combination of ``grep`` and ``wc`` the same thing can be done.
 
 ## grep -r
 ### Example 1
@@ -136,10 +146,13 @@ The -c flag will count the lines with the given string. I use it in combination 
 ./biomed/1471-2334-3-15.txt:        The work is a portion of MA's doctoral thesis. MA
 ./biomed/1472-6793-2-19.txt:        author DER (doctoral candidate) and contributed to the
 ```
+### Explanation 1
+The -r flag is arguably the most important flag for grep. What -r does is it recursively searches the given directory and looks in each file for the given string. 
 ### Example 2
 ```
 λ grep -r "government/" ./government/
 ./government/Gen_Account_Office/im814.txt:Participate in government/contractor
 ./government/Gen_Account_Office/July11-2001_gg00172r.txt: On May 24, 2000, FFC sponsored a government/industry forum on
 ```
-The -r flag is arguably the most important flag for grep. What -r does is it recursively searches the given directory and looks in each file for the given string. Searching entire filesystems for keywords is **SO** important. An example not in the technical directory is if you know you once wrote code using a certain library (like for example the <libatomic> or <mutex> directories for C/C++) but don't remember in what project or in what file, just simply ``grep`` your entire code folder and save an hour-long headache into a minute-long solution.
+### Explanation 2
+Searching entire filesystems for keywords is **SO** important. An example not in the technical directory is if you know you once wrote code using a certain library (like for example the <libatomic> or <mutex> directories for C/C++) but don't remember in what project or in what file, just simply ``grep`` your entire code folder and save an hour-long headache into a minute-long solution.
