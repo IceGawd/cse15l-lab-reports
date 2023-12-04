@@ -48,3 +48,6 @@ rm *.class
 cd ..
 rmdir classFiles
 ```
+
+# Part 2
+I have said this all of the times I have been asked this, but for me personally, the two coolest things I have learned are Java Servers/queries and SSH key generation. When I learned about how easy Java Servers were to set up, I honestly thought about how I could potentially use them to run servers to host multiplayer video games for games I program. As for SSH key generation, I knew the idea behind Diffie-Hellman encryption but I had never seen an application of public and private keys until that lab, which was awesome to learn. It also sparked me to learn more and I learned that you can chain them to ssh into a different remote system. Another thing that was personally helpful for me was to just get reminded of a lot of stuff I knew but didn't frequently use (ie. GitHub commands, Ctlr+R to reverse search, usage of VIM). I knew how to do these beforehand, but since I didn't use them much, it was nice to get a refresher and get better with them.
